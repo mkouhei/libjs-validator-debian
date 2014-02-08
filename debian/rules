@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@ 
+
+override_dh_auto_build:
+	mkdir $(CURDIR)/_build
+	uglifyjs -v -o $(CURDIR)/_build/validator.min.js $(CURDIR)/validator.js
+
+override_dh_auto_test:
+
+override_dh_auto_clean:
+	dh_clean
+	rm -rf $(CURDIR)/_build
+

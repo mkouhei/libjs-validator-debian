@@ -1,0 +1,19 @@
+Source: validator.js
+Section: web
+Priority: extra
+Maintainer: Kouhei Maeda <mkouhei@palmtb.net>
+Build-Depends: debhelper (>= 9.0.0), node-uglify
+Standards-Version: 3.9.5
+Homepage: https://github.com/chriso/validator.js
+
+Package: libjs-validator
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: String validation and sanitization
+ validator.js is a library of string validators and sanitizers.
+ This library validates and sanitizes strings only. All input will be coerced
+ to a string using the following rules.
+  * Call the toString property if available.
+  * Replace null, undefined or NaN with an empty string.
+  * Everything else is coerced with input + ''.
+
